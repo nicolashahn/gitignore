@@ -11,11 +11,11 @@ gitignore() {
     for arg
     do 
         abs=`readlinkf $arg`
-        trimmed=${abs/$rootdir/}
+        rel=${abs/$rootdir/}
         if [ -f "$abs" ] || [ -d "$abs" ]; then
-            grep -qF -- "$trimmed" "$ignorefile" || echo "$trimmed" >> $ignorefile
+            grep -qF -- "$rel" "$ignorefile" || echo "$rel" >> $ignorefile
         else
-            echo "path '$trimmed' does not exist, skipping"
+            echo "path '$rel' does not exist, skipping"
         fi
     done
 }
