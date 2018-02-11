@@ -12,6 +12,11 @@ source ~/.bash_profile
 
 ## usage
 ```
+gitignore <path(s) to be added to .gitignore>
+```
+
+## example
+```
 foo/
     .gitignore
     already_ignored
