@@ -7,11 +7,11 @@ readlinkf() {
 
 gitignore() {
     rootdir="`git rev-parse --show-toplevel`/"
-    gitignorefile="$rootdir.gitignore"
+    ignorefile="$rootdir.gitignore"
     for arg
     do 
         abs=`readlinkf $arg`
         trimmed=${abs/$rootdir/}
-        echo "$trimmed" >> $gitignorefile
+        grep -qF -- "$trimmed" "$ignorefile" || echo "$trimmed" >> $ignorefile
     done
 }
