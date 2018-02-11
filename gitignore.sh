@@ -6,6 +6,9 @@ readlinkf() {
 }
 
 gitignore() {
+    if [ $# -eq 0 ]; then 
+        echo "usage: gitignore <path(s) to be added to .gitignore>"
+    fi
     rootdir="`git rev-parse --show-toplevel`/"
     ignorefile="$rootdir.gitignore"
     for arg
