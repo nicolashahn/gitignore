@@ -1,5 +1,5 @@
 # gitignore
-Command to add paths to .gitignore easily from anywhere in the repo.
+Command to add paths to `.gitignore` easily from anywhere in the repo.
 
 - `.gitignore` will be created if it does not exist.
 - Invalid paths will be ignored (by the command, not `git`).
