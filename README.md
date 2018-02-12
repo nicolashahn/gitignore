@@ -5,10 +5,11 @@ Command to add paths to `.gitignore` easily from anywhere in the repo.
 - Invalid paths will be ignored (by the command, not `git`).
 
 ## install
+Create an alias in your `.bash_profile`:
 ```
-./install.sh
+echo "alias gitignore='$PWD/gitignore.sh'" >> ~/.bash_profile
 ```
-Adds the `alias` `gitignore` to your `.bash_profile`.
+or just run `./install.sh` which does the same.
 
 ## usage
 ```
