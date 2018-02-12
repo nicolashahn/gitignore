@@ -16,6 +16,8 @@ gitignore() {
         abs=`readlinkf $arg`
         rel=${abs/$rootdir/}
         if [ -f "$abs" ] || [ -d "$abs" ]; then
+            touch $ignorefile
+            [[ $(tail -c1 $ignorefile) ]] && echo '' >> $ignorefile
             grep -q -- "^$rel$" "$ignorefile" || echo "$rel" >> $ignorefile
         else
             echo "path '$rel' does not exist, skipping"
