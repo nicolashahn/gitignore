@@ -1,5 +1,5 @@
+#!/usr/bin/env bash
 
-# necessary for gitignore
 readlinkf() {
     cd $(dirname $1)
     echo $PWD/$(basename $1)
@@ -11,8 +11,7 @@ gitignore() {
     fi
     rootdir="`git rev-parse --show-toplevel`/"
     ignorefile="$rootdir.gitignore"
-    for arg
-    do 
+    for arg; do 
         abs=`readlinkf $arg`
         rel=${abs/$rootdir/}
         if [ -f "$abs" ] || [ -d "$abs" ]; then
@@ -24,3 +23,5 @@ gitignore() {
         fi
     done
 }
+
+gitignore $@

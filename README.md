@@ -6,9 +6,9 @@ Command to add paths to `.gitignore` easily from anywhere in the repo.
 
 ## install
 ```
-cat gitignore.sh >> ~/.bash_profile
-source ~/.bash_profile
+./install.sh
 ```
+Adds the `alias` `gitignore` to your `.bash_profile`.
 
 ## usage
 ```
